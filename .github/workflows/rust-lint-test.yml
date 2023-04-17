@@ -1,10 +1,10 @@
-name: PR
+name: lint-test-cov
 
 on:
   workflow_call:
     inputs:
       project_dir:
-        description: "The directory of the project to build"
+        description: "The directory of the project to lint & test"
         required: true
         type: string
         default: "."
