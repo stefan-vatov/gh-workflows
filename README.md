@@ -19,7 +19,7 @@ on:
 
 jobs:
   lint_test:
-    uses: https://github.com/stefan-vatov/gh-workflows/.github/workflows/rust-lint-test.yml
+    uses: stefan-vatov/gh-workflows/.github/workflows/rust-lint-test.yml
     with:
       project_dir: <relative path>
   
