@@ -31,12 +31,11 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
       - name: Install Protoc
         uses: arduino/setup-protoc@v1
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
+
       - uses: actions-rs/cargo@v1
         with:
           command: test
-          github-token: ${{ secrets.GITHUB_TOKEN }}
+
 
   fmt:
     name: Rustfmt
