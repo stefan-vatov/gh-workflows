@@ -11,14 +11,15 @@ on:
 env:
   CARGO_TERM_COLOR: always
 
-defaults:
-  run:
-    working-directory: ${{ inputs.project_dir }}
+
 
 jobs:
   test:
     name: Test
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ${{ inputs.project_dir }}
     steps:
       - uses: actions/checkout@v2
         with:
@@ -40,6 +41,9 @@ jobs:
   fmt:
     name: Rustfmt
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ${{ inputs.project_dir }}
     steps:
       - uses: actions/checkout@v2
         with:
@@ -59,6 +63,9 @@ jobs:
   clippy:
     name: Clippy
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ${{ inputs.project_dir }}
     steps:
       - uses: actions/checkout@v2
         with:
@@ -79,6 +86,9 @@ jobs:
   coverage:
     name: coverage
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ${{ inputs.project_dir }}
     container:
       image: xd009642/tarpaulin:develop-nightly
       options:  --security-opt seccomp=unconfined
