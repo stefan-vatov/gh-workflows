@@ -7,7 +7,6 @@ on:
         description: "The directory of the project to lint & test"
         required: true
         type: string
-        default: "."
 
 env:
   CARGO_TERM_COLOR: always
