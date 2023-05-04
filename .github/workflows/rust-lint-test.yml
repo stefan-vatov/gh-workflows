@@ -15,7 +15,7 @@ env:
 
 jobs:
   test:
-    name: Test
+    name: test
     runs-on: ubuntu-latest
     defaults:
       run:
@@ -28,7 +28,7 @@ jobs:
       - run: cargo test
 
   fmt:
-    name: Rustfmt
+    name: rust fmt
     runs-on: ubuntu-latest
     defaults:
       run:
@@ -41,7 +41,7 @@ jobs:
       - run: cargo fmt --all -- --check
 
   clippy:
-    name: Clippy
+    name: clippy
     runs-on: ubuntu-latest
     defaults:
       run:

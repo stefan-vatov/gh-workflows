@@ -1,0 +1,25 @@
+name: pr hooks
+
+on:
+  workflow_call:
+
+env:
+  CARGO_TERM_COLOR: always
+
+
+jobs:
+  hooks:
+    name: hooks
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+    - name: Set up Python 3.8
+      uses: actions/setup-python@v1
+      with:
+        python-version: 3.8
+    - name: Run pre-commit
+      run: |
+        pip install pre-commit
+        pre-commit run --all-files
