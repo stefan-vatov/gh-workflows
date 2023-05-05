@@ -20,7 +20,7 @@ on:
 
 
 jobs:
-  lint_test:
+  bump_tag:
     uses: stefan-vatov/gh-workflows/.github/workflows/rust-lint-test.yml@main
     with:
       project_dir: <relative path>
@@ -54,7 +54,7 @@ jobs:
 File `bump-and-tag.yml`, contents:
 
 ```yml
-name: bump-and-tag
+name: Bump and Tag
 
 on:
   push:
@@ -62,7 +62,7 @@ on:
       - main
 
 jobs:
-  lint_test:
+  bump_tag:
     uses: stefan-vatov/gh-workflows/.github/workflows/bump-and-tag.yml@main
 
 ```
