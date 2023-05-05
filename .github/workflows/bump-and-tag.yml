@@ -1,9 +1,7 @@
 name: Rust Bump and tag
 
 on:
-  push:
-    branches:
-      - main
+  workflow_call:
 
 env:
   CARGO_TERM_COLOR: always
