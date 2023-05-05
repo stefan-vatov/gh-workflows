@@ -1,0 +1,25 @@
+name: Rust Bump and tag
+
+on:
+  push:
+    branches:
+      - main
+
+env:
+  CARGO_TERM_COLOR: always
+
+jobs:
+  bump:
+    name: Version Bump
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - uses: dtolnay/rust-toolchain@stable
+      - run: |
+          git config --global user.email '${GITHUB_ACTOR}'
+          git config --global user.name '${GITHUB_ACTOR}@users.noreply.github.com'
+          cargo install cargo-edit
+          cargo install --locked cocogitto
+          cog bump -a
