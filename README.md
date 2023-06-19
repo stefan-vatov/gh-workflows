@@ -76,8 +76,6 @@ name: js build lint
 
 on:
   push:
-    branches:
-      - main
   pull_request:
 
 jobs:
