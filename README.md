@@ -66,3 +66,22 @@ jobs:
     uses: stefan-vatov/gh-workflows/.github/workflows/bump-and-tag.yml@main
 
 ```
+
+### js build lint
+
+File `js-build-lint.yml`, contents:
+
+```yml
+name: js build lint
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  bump_tag:
+    uses: stefan-vatov/gh-workflows/.github/workflows/js-build-lint.yml.yml@main
+
+```
