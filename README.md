@@ -75,11 +75,10 @@ File `js-build-lint.yml`, contents:
 name: js build lint
 
 on:
-  push:
   pull_request:
 
 jobs:
-  bump_tag:
-    uses: stefan-vatov/gh-workflows/.github/workflows/js-build-lint.yml.yml@main
+  build-lint:
+    uses: stefan-vatov/gh-workflows/.github/workflows/js-build-lint.yml@main
 
 ```
